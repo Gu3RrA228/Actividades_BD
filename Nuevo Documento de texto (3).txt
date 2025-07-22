@@ -1,0 +1,119 @@
+/* Inserts para la tabla DireccionEmpleado */
+INSERT INTO DireccionEmpleado (Pk_DireccionEmpleado, Calle, Colonia, CP, Estado, Ciudad, NumExterior, NumInterior, FK_Empleado) VALUES
+(1, 'Calle Papel', 'Centro', '91000', 'Veracruz', 'Xalapa', '101', '2A', 1),
+(2, 'Av. Boligrafo', 'Progreso', '91010', 'Veracruz', 'Xalapa', '45', NULL, 2),
+(3, 'Calle Goma', 'Zaragoza', '91700', 'Veracruz', 'Veracruz', '77', NULL, 3),
+(4, 'Av. Cartulina', 'El Mirador', '94500', 'Veracruz', 'Cordoba', '39', 'B1', 4),
+(5, 'Calle Libreta', 'Petrolera', '93210', 'Veracruz', 'Poza Rica', '12', NULL, 5),
+(6, 'Paseo del Lapiz', 'La Cima', '93400', 'Veracruz', 'Papantla', '63', '3C', 6),
+(7, 'Av. Cuaderno', 'Costa Verde', '94290', 'Veracruz', 'Boca del Rio', '88', NULL, 7),
+(8, 'Calle Marcador', 'Universidad', '94300', 'Veracruz', 'Orizaba', '55', NULL, 8),
+(9, 'Diagonal Goma', 'Jardines', '91015', 'Veracruz', 'Coatepec', '90', '1', 9),
+(10, 'Calle Pegamento', 'Reforma', '96700', 'Veracruz', 'Minatitlan', '21', NULL, 10);
+
+
+/* Inserts para la tabla Usuario */
+INSERT INTO Usuario (PK_Usuario, NombreUsuario, Password, Correo, Estatus, FK_Rol, FK_Empleado) VALUES
+(5, 'jlopez', 'abc123', 'jlopez@email.com', 'A', 2, 4),
+(2, 'mramirez', 'pass456', 'mramirez@email.com', 'A', 1, 7),
+(9, 'cvaldez', 'clave789', 'cvaldez@email.com', 'I', 3, 6),
+(6, 'laura123', 'pw321', 'laura@email.com', 'A', 1, 8),
+(1, 'edu_gomez', 'papel321', 'edu@email.com', 'A', 2, 3),
+(3, 'karla.q', 'lapiz987', 'karla@email.com', 'I', 2, 5),
+(8, 'ricardo.t', 'goma654', 'ricardo@email.com', 'A', 3, 9),
+(7, 'ana.vega', 'cuaderno01', 'ana@email.com', 'A', 1, 2),
+(4, 'rangel', 'papelote!', 'rangel@email.com', 'A', 1, 1),
+(10, 'daliah', 'superpass', 'dalia@email.com', 'I', 2, 10);
+
+/* Inserts para la tabla DireccionSucursal */
+INSERT INTO DireccionSucursal (PK_DireccionSucursal, Ciudad, Calle, NumInterior, NumExterior, Colonia, CP, Estado) VALUES
+(1, 'Xalapa', 'Av. Pipila', 'B1', '102', 'Centro', '91000', 'Veracruz'),
+(2, 'Coatepec', 'Calle Lapicera', NULL, '45', 'El Carmen', '91010', 'Veracruz'),
+(3, 'Veracruz', 'Pluma Azul', 'A2', '78', 'Zaragoza', '91700', 'Veracruz'),
+(4, 'Orizaba', 'Av. Cartulina', NULL, '12', 'Centro', '94300', 'Veracruz'),
+(5, 'Poza Rica', 'Boulevard Tinta', 'C', '89', 'Petrolera', '93210', 'Veracruz'),
+(6, 'Cordoba', 'Av. Mochila', '1', '34', 'La Luz', '94500', 'Veracruz'),
+(7, 'Papantla', 'Papel Bond', NULL, '56', 'Centro', '93400', 'Veracruz'),
+(8, 'Minatitlan', 'Calle Goma', NULL, '77', 'Industrial', '96700', 'Veracruz'),
+(9, 'Tuxpan', 'Marcador', '2B', '88', 'Reforma', '92770', 'Veracruz'),
+(10, 'Boca del Rio', 'Libreta', NULL, '93', 'Costa Verde', '94290', 'Veracruz');
+
+/* Inserts para la tabla InventarioDeMovimientos */
+INSERT INTO InventarioDeMovimientos (PK_InventarioMovimiento, TipoMovE_S, Cantidad, Fecha, FK_Producto, FK_Sucursal, FK_DetalleVenta, FK_DetalleCompra) VALUES
+(3, 'E', 20, TO_DATE('2025-07-01','YYYY-MM-DD'), 5, 1, NULL, 2),
+(5, 'S', 10, TO_DATE('2025-07-02','YYYY-MM-DD'), 2, 4, 6, NULL),
+(1, 'E', 50, TO_DATE('2025-07-03','YYYY-MM-DD'), 3, 3, NULL, 4),
+(8, 'S', 5, TO_DATE('2025-07-04','YYYY-MM-DD'), 1, 2, 8, NULL),
+(6, 'E', 100, TO_DATE('2025-07-05','YYYY-MM-DD'), 7, 5, NULL, 1),
+(2, 'S', 15, TO_DATE('2025-07-06','YYYY-MM-DD'), 4, 1, 5, NULL),
+(7, 'E', 70, TO_DATE('2025-07-07','YYYY-MM-DD'), 6, 6, NULL, 3),
+(9, 'S', 30, TO_DATE('2025-07-08','YYYY-MM-DD'), 8, 3, 7, NULL),
+(4, 'E', 25, TO_DATE('2025-07-09','YYYY-MM-DD'), 9, 2, NULL, 5),
+(10, 'S', 20, TO_DATE('2025-07-09','YYYY-MM-DD'), 10, 4, 9, NULL);
+
+/* Inserts para la tabla DireccionCliente */
+INSERT INTO DireccionCliente (PK_DireccionCliente, Calle, Colonia, NumExterior, NumInterior, Estado, CP, Ciudad, FK_Cliente) VALUES
+(1, 'Lapicero', 'Centro', '23', '1A', 'Veracruz', '91000', 'Xalapa', 2),
+(2, 'Marcador', 'La Luz', '45', NULL, 'Veracruz', '91010', 'Xalapa', 5),
+(3, 'Pluma', 'Jardines', '78', 'B3', 'Veracruz', '91015', 'Coatepec', 4),
+(4, 'Cartulina', 'Centro', '12', NULL, 'Veracruz', '91020', 'Xalapa', 1),
+(5, 'Tinta', 'Zaragoza', '56', NULL, 'Veracruz', '91700', 'Veracruz', 6),
+(6, 'Goma', 'Reforma', '88', NULL, 'Veracruz', '94290', 'Boca del Rio', 3),
+(7, 'Cuaderno', 'Universidad', '39', NULL, 'Veracruz', '94500', 'Cordoba', 8),
+(8, 'Libreta', 'La Paz', '49', '2B', 'Veracruz', '93400', 'Papantla', 9),
+(9, 'Papel', 'La Cima', '19', NULL, 'Veracruz', '94300', 'Orizaba', 7),
+(10, 'Crayon', 'Petrolera', '60', '3', 'Veracruz', '93210', 'Poza Rica', 10);
+
+/* Inserts para la tabla Impuesto */
+INSERT INTO Impuesto (PK_Impuesto, Nombre, Porcentaje) VALUES
+(1, 'IVA General', '16'),
+(2, 'IEPS Lapiceras', '8'),
+(3, 'IVA Escolar', '10'),
+(4, 'IVA Libretas', '12'),
+(5, 'Impuesto Cuadernos', '5'),
+(6, 'IVA Promocional', '4'),
+(7, 'IVA Gomas', '7'),
+(8, 'Impuesto Extra', '6'),
+(9, 'IVA Colores', '9'),
+(10, 'IVA Adhesivos', '11');
+
+/* Inserts para la tabla Producto */
+INSERT INTO Producto (PK_Producto, Nombre, Descripcion, StockActual, FK_Categoria, FK_Proveedor, FK_Impuesto) VALUES
+(1, 'Cuaderno Profesional', 'Cuaderno de 100 hojas raya', 120, 1, 2, 3),
+(2, 'Pluma Azul', 'Pluma tinta azul retractil', 250, 2, 3, 1),
+(3, 'Marcador Permanente', 'Marcador negro para superficies lisas', 75, 3, 1, 9),
+(4, 'Resaltador Amarillo', 'Resaltador fluorescente', 180, 3, 2, 8),
+(5, 'Goma de borrar', 'Goma blanca escolar', 90, 4, 4, 7),
+(6, 'Caja de colores', 'Colores largos de madera', 60, 5, 3, 9),
+(7, 'Pegamento en barra', 'Pegamento solido escolar', 130, 4, 5, 10),
+(8, 'Cartulina Blanca', 'Cartulina tamano carta', 200, 6, 1, 1),
+(9, 'Estuche de geometria', 'Juego con regla, compas y escuadra', 45, 7, 6, 6),
+(10, 'Lapicera escolar', 'Lapicera de tela con cierre', 80, 8, 2, 2);
+
+/* Inserts para la tabla Promocion */
+INSERT INTO Promocion (PK_Promocion, Nombre, Descripcion, HoraInicio, HoraFin, PorcentajeDescuento, FK_Producto) VALUES
+(1, 'Promo Regreso a Clases', 'Descuento en cuadernos', TO_DATE('2025-07-01','YYYY-MM-DD'), TO_DATE('2025-07-31','YYYY-MM-DD'), '15', 1),
+(2, 'Ofertazo Gomas', 'Mitad de precio en gomas', TO_DATE('2025-07-05','YYYY-MM-DD'), TO_DATE('2025-07-15','YYYY-MM-DD'), '50', 5),
+(3, 'Marcadores 3x2', 'Llevate 3 paga 2', TO_DATE('2025-07-10','YYYY-MM-DD'), TO_DATE('2025-07-20','YYYY-MM-DD'), '33', 3),
+(4, 'Dia del estudiante', 'Descuento general', TO_DATE('2025-07-01','YYYY-MM-DD'), TO_DATE('2025-07-10','YYYY-MM-DD'), '10', 2),
+(5, 'Semana de Colores', 'Descuento en caja de colores', TO_DATE('2025-07-15','YYYY-MM-DD'), TO_DATE('2025-07-22','YYYY-MM-DD'), '20', 6),
+(6, 'Promo Pegamento', '2x1 en barra', TO_DATE('2025-07-03','YYYY-MM-DD'), TO_DATE('2025-07-09','YYYY-MM-DD'), '50', 7),
+(7, 'Cartulina Loca', 'Precio especial por volumen', TO_DATE('2025-07-12','YYYY-MM-DD'), TO_DATE('2025-07-19','YYYY-MM-DD'), '25', 8),
+(8, 'Promo Geometria', 'Descuento escolar', TO_DATE('2025-07-06','YYYY-MM-DD'), TO_DATE('2025-07-12','YYYY-MM-DD'), '18', 9),
+(9, 'Lapiceras baratas', 'Liquidacion de modelos anteriores', TO_DATE('2025-07-08','YYYY-MM-DD'), TO_DATE('2025-07-15','YYYY-MM-DD'), '30', 10),
+(10, 'Todo para el alumno', 'Combo especial', TO_DATE('2025-07-01','YYYY-MM-DD'), TO_DATE('2025-07-31','YYYY-MM-DD'), '20', 4);
+
+/* Inserts para la tabla DireccionProveedor */
+INSERT INTO DireccionProveedor (PK_DireccionProveedor, Calle, Colonia, Estado, CP, NumExterior, NumInterior, Ciudad, FK_Proveedor) VALUES
+(1, 'Proveedora Central', 'Comercial', 'CDMX', '01000', '45', NULL, 'Ciudad de Mexico', 1),
+(2, 'Av. Tintas', 'Industrial', 'Jalisco', '44100', '89', '2B', 'Guadalajara', 2),
+(3, 'Lapiceros Norte', 'Centro', 'Nuevo Leon', '64000', '77', NULL, 'Monterrey', 3),
+(4, 'Cartones del Sur', 'Fovissste', 'Puebla', '72000', '22', '1', 'Puebla', 4),
+(5, 'Pegamentos MX', 'El Carmen', 'CDMX', '03900', '38', NULL, 'Ciudad de Mexico', 5),
+(6, 'Distribuidora Escolar', 'Las Americas', 'Yucatan', '97000', '19', NULL, 'Merida', 6),
+(7, 'OfiMax', 'Lopez Mateos', 'Jalisco', '45000', '33', '3C', 'Zapopan', 7),
+(8, 'Proveedor Plus', 'Roma Norte', 'CDMX', '06700', '11', NULL, 'Ciudad de Mexico', 8),
+(9, 'Grupo Escolar', 'Reforma', 'Oaxaca', '68000', '90', '2', 'Oaxaca', 9),
+(10, 'Papeleria Global', 'Juarez', 'CDMX', '06600', '10', NULL, 'Ciudad de Mexico', 10);
+
+
